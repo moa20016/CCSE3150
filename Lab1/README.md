@@ -5,13 +5,12 @@ This repository contains the code for Lab 1 of the CSE 3150 course. Follow the s
 **Clone the Repository**
 Open your command prompt or terminal and execute the following command to clone the repository:
 ```shell
-git clone https://github.com/moa20016/CSE3150/Lab1.git
+git clone https://github.com/moa20016/CCSE3150.git
 ```
-
-**Change Directory and Open in VSCode:**
+**Change Directory**
 
 ```shell
-cd .../Lab1
+cd CSE3150/Lab1
 ```
 **To launch the project:**
 
