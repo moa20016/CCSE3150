@@ -1,4 +1,4 @@
-# CSE 3150 - Lab 1
+# CSE 3150 - Lab Week 1: prefix sums
 
 This repository contains the code for Lab 1 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
 
