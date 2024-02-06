@@ -4,18 +4,24 @@
 #include <ctime>
 #include "well_balanced.h"
 int main() {
-    std::srand(std::time(0));
-    int iterations = 50000;
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
+    int n = 3; 
+    int totalRuns = 100000;  
     int wellBalancedCount = 0;
 
-    for (int i = 0; i < iterations; ++i) {
-        std::vector<int> sequence = generateWellBalancedList(3);
+    for (int run = 0; run < totalRuns; ++run) {
+        std::vector<int> sequence = generateRandomParentheses(n);
         if (isWellBalanced(sequence)) {
             wellBalancedCount++;
-            }
+        }
     }
-    double proportion = static_cast<double>(wellBalancedCount) / iterations;
-    std::cout << "Proportion of well-balanced lists: " << proportion << std::endl;
+
+    double proportionWellBalanced = static_cast<double>(wellBalancedCount) / totalRuns;
+
+    std::cout << "Total runs: " << totalRuns << std::endl;
+    std::cout << "Well-balanced count: " << wellBalancedCount << std::endl;
+    std::cout << "Proportion of well-balanced lists: " << proportionWellBalanced << std::endl;
 
     return 0;
 }
