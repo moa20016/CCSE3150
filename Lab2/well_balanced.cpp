@@ -3,6 +3,13 @@
 #include <cstdlib>
 #include <ctime>
 #include "well_balanced.h"
+#include <random>
+
+void swap(int* a, int* b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 void fisherYatesShuffle(std::vector<int>& sequence) {
     int n = sequence.size();
@@ -10,6 +17,13 @@ void fisherYatesShuffle(std::vector<int>& sequence) {
         int j = std::rand() % (i + 1);
         std::swap(sequence[i], sequence[j]);
     }
+}
+
+void showData(const std::vector<int>& array) {
+    for (int num : array) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
 }
 
 bool isWellBalanced(const std::vector<int>& sequence) {
@@ -23,15 +37,13 @@ bool isWellBalanced(const std::vector<int>& sequence) {
     return sum == 0;
 }
 
-std::vector<int> generateWellBalancedList(int n) {
+std::vector<int> generateRandomParentheses(int n) {
     std::vector<int> sequence(2 * n, 0);
     for (int i = 0; i < n; ++i) {
-        sequence[i] = 1;
-        sequence[i + n] = -1;
+        sequence[i] = 1;       
+        sequence[i + n] = -1;  
     }
+
     fisherYatesShuffle(sequence);
-    while (!isWellBalanced(sequence)) {
-        fisherYatesShuffle(sequence);
-    }
     return sequence;
-}   
+}
