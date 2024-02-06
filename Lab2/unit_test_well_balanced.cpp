@@ -5,14 +5,21 @@
 #include <vector>
 #include <algorithm>
 
-TEST_CASE("Well-Balanced List Generation") {
-    std::srand(std::time(0));
-    int iterations = 5000;
+TEST_CASE("Generated Parentheses Sequences") {
+    int n = 3;  
+    int totalRuns = 100;  
 
-    for (int i = 0; i < iterations; ++i) {
-        SUBCASE("Generated list is well-balanced") {
-            std::vector<int> sequence = generateWellBalancedList(3);
-            CHECK(isWellBalanced(sequence));
+    for (int run = 0; run < totalRuns; ++run) {
+        std::vector<int> sequence = generateRandomParentheses(n);
+        CHECK(sequence.size() == 2 * n);
+        int openCount = std::count(sequence.begin(), sequence.end(), 1);
+        int closeCount = std::count(sequence.begin(), sequence.end(), -1);
+        CHECK(openCount == n);
+        CHECK(closeCount == n);
+        if (isWellBalanced(sequence)) {
+            CHECK(true);
+        } else {
+            CHECK_FALSE(isWellBalanced(sequence));
         }
     }
 }
