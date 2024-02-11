@@ -1,5 +1,5 @@
 # CSE 3150 - Exercise 1: Delete Linked List
-This repository contains the code for Exercise 1 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
+This repository contains the code for Exercise 2 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
 
 **Clone the Repository**
 
@@ -16,7 +16,7 @@ cd CSE3150/Exercise1
 
 ```shell
 
-g++ linked_list_main.cpp linked_list.cpp
+g++ main_stack_stl.cpp stack_stl.cpp
 ```
 ```shell
 ./a
@@ -27,7 +27,7 @@ g++ linked_list_main.cpp linked_list.cpp
 
 ```shell
 
-g++ unit_test_linked_list.cpp linked_list.cpp
+g++ test_stack_stl.cpp stack_stl.cpp
 ```
 ```shell
 ./a
