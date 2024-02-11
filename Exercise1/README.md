@@ -16,7 +16,7 @@ cd CSE3150/Exercise1
 
 ```shell
 
-g++ main_stack_stl.cpp stack_stl.cpp
+g++ linked_list_main.cpp linked_list.cpp
 ```
 ```shell
 ./a
@@ -27,7 +27,7 @@ g++ main_stack_stl.cpp stack_stl.cpp
 
 ```shell
 
-g++ test_stack_stl.cpp stack_stl.cpp
+g++ unit_test_linked_list.cpp linked_list.cpp
 ```
 ```shell
 ./a
