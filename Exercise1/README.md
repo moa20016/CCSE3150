@@ -1,5 +1,5 @@
 # CSE 3150 - Exercise 1: Delete Linked List
-This repository contains the code for Exercise 2 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
+This repository contains the code for Exercise 1 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
 
 **Clone the Repository**
 
