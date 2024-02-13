@@ -3,6 +3,7 @@
 This repository contains the code for Lab 3 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
 
 **Clone the Repository**
+
 Open your command prompt or terminal and execute the following command to clone the repository:
 ```shell
 git clone https://github.com/moa20016/CSE3150.git
