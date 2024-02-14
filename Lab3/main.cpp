@@ -2,21 +2,16 @@
 #include "linked_list.h"
 
 int main() {
-    Node* head = new Node();
-    initializeLinkedList(head);
-    std::cout << "Original linked list:\n";
-    printLinkedList(head);
-    pointerJumping(head);
-    std::cout << "After pointer jumping:\n";
-    printLinkedList(head);
+    int n = 5;
+    struct node * head = createLinkedList(n);
 
-    Node* current = head;
-    while (current->next != current) {
-        Node* temp = current->next;
-        delete current;
-        current = temp;
-    }
-    delete current;
+    std::cout << "Original linked list:" << std::endl;
+    print(head, n);
+
+    pointerJumping(head);
+
+    std::cout << "\nLinked list after pointer jumping:" << std::endl;
+    print(head, n);
 
     return 0;
 }
