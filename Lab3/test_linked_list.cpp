@@ -2,36 +2,22 @@
 #include "doctest.h"
 #include "linked_list.h"
 
-TEST_CASE("LinkedList functionality") {
-    SUBCASE("Initialization") {
-        Node* head = new Node();
-        initializeLinkedList(head);
-        Node* current = head;
-        for (int i = 0; i < 5; ++i) {
-            REQUIRE(current->next != nullptr);
-            current = current->next;
-        }
-        REQUIRE(current->next == current); // Check if last element points to itself
-        delete head; 
+TEST_CASE("Test createLinkedList and print") {
+    struct node * head = createLinkedList(5);
+    CHECK(head != nullptr);
+    print(head, 5);
+    // Check if the last element points to itself
+    struct node * lastNode = head;
+    for (int i = 0; i < 4; i++) {
+        lastNode = lastNode->next;
     }
+    CHECK(lastNode->next == head);
+}
 
-    SUBCASE("Pointer jumping") {
-        Node* head = new Node();
-        initializeLinkedList(head);
-        pointerJumping(head);
-        Node* current = head;
-        Node* last = nullptr;
-        // Find the last element
-        while (current->next != current) {
-            last = current->next;
-            current = current->next;
-        }
-        current = head;
-        // Check if all elements point to the last element
-        while (current->next != current) {
-            REQUIRE(current->next == last);
-            current = current->next;
-        }
-        delete head;
-    }
+TEST_CASE("Test pointerJumping and getValue") {
+    struct node * head = createLinkedList(5);
+    pointerJumping(head);
+    CHECK(getValue(head, 3, 5) == 5);
+    CHECK(getValue(head, 5, 5) == 5);
+    CHECK(getValue(head, 4, 5) == 5);
 }
