@@ -55,3 +55,27 @@ TEST_CASE("createNonCrossingPrefixSum") {
     CHECK(result == std::vector<int>{1, 1, -1, -1});
 }
 
+TEST_CASE("All sequences are balanced") {
+    const int numTests = 1000; 
+    const int n = 3;
+
+    for (int i = 0; i < numTests; ++i) {
+        std::vector<int> result = createNonCrossingPrefixSum(n);
+        int sum = 0;
+        bool balanced = true;
+        for (int j = 0; j < result.size(); ++j) {
+            sum += result[j];
+            if (sum < 0) {
+                balanced = false;
+                break;
+            }
+        }
+        if (balanced && sum != 0) {
+            balanced = false;
+        }
+
+        CHECK(balanced);
+    }
+}
+
+
