@@ -10,7 +10,7 @@ git clone https://github.com/moa20016/CSE3150.git
 **Change Directory**
 
 ```shell
-cd CSE3150/STL vectors
+cd CSE3150/Week7
 ```
 **To launch the project:**
 
