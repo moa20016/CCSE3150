@@ -69,4 +69,37 @@ TEST_CASE("operator<< function - vector<vector<int>>") {
     CHECK(ss.str() == "1 2 3\n4 5 6\n7 8 9");
 }
 
+TEST_CASE("Graphs") {
+    vector<vector<int>> DNeg1 = {
+        {-1, 2, 2, 2, 2, 2},
+        {2, 2, 2, 2, 2, 2},
+        {2, 2, 2, 2, 2, 2},
+        {2, 2, 2, 2, 2, 2},
+        {2, 2, 2, 2, 2, 2},
+        {2, 2, 2, 2, 2, 2}
+    };
+
+    vector<vector<int>> DZero = {
+        {0, 2, 2, 2, 2, 2},
+        {2, 0, 2, 2, 2, 2},
+        {2, 2, 0, 2, 2, 2},
+        {2, 2, 2, 0, 2, 2},
+        {2, 2, 2, 2, 0, 2},
+        {2, 2, 2, 2, 2, 0}
+    };
+
+    vector<vector<int>> DPos1 = {
+        {2, 1, 2, 2, 2, 2},
+        {2, 2, 1, 2, 2, 2},
+        {2, 2, 2, 1, 2, 2},
+        {2, 2, 2, 2, 1, 2},
+        {2, 2, 2, 2, 2, 1},
+        {1, 2, 2, 2, 2, 2}
+    };
+    expensiveDigraphExactPaths(DNeg1, DZero, DPos1);
+    CHECK(DNeg1 == vector<vector<int>>(6, vector<int>(6, -1)));
+    CHECK(DZero == vector<vector<int>>(6, vector<int>(6, 0)));
+    CHECK(DPos1 == vector<vector<int>>(6, vector<int>(6, 1)));
+}
+
 
