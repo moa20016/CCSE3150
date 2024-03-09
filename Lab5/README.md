@@ -17,7 +17,7 @@ cd CSE3150/Lab5
 
 ```shell
 
-g++ main.cpp prefixsumoperations.cpp
+ g++ exp_digraph.cpp main.cpp
 ```
 ```shell
 ./a
@@ -28,7 +28,7 @@ g++ main.cpp prefixsumoperations.cpp
 
 ```shell
 
-g++ prefixsumoperationstest.cpp prefixsumoperations.cpp
+g++ exp_digraph.cpp test.cpp
 ```
 ```shell
 ./a
