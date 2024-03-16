@@ -2,6 +2,20 @@
 #include "doctest.h"
 #include "prefixsumoperations.h"
 
+TEST_CASE("fisherYatesShuffle") {
+    std::vector<int> sequence{1, 2, 3, 4, 5};
+    fisherYatesShuffle(sequence);
+    // Check if the sequence is shuffled by checking if any element is at its original position
+    bool shuffled = false;
+    for (size_t i = 0; i < sequence.size(); ++i) {
+        if (sequence[i] != static_cast<int>(i + 1)) {
+            shuffled = true;
+            break;
+        }
+    }
+    CHECK(shuffled);
+}
+
 TEST_CASE("fillWithOnesAndNegOnes") {
     std::vector<int> result = fillWithOnesAndNegOnes(3);
     std::vector<int> expected{1, 1, 1, -1, -1, -1, -1};
