@@ -4,6 +4,14 @@
 #include "prefixsumoperations.h"
 #include <random>
 
+void fisherYatesShuffle(std::vector<int>& sequence) {
+    int n = sequence.size();
+    for (int i = n - 1; i > 0; --i) {
+        int j = std::rand() % (i + 1);
+        std::swap(sequence[i], sequence[j]);
+    }
+}
+
 std::vector<int> fillWithOnesAndNegOnes(int n) {
     std::vector<int> result;
     for (int i = 0; i < n; ++i) {
@@ -62,9 +70,8 @@ std::vector<int> concatenateArrays(const std::vector<int>& p1, const std::vector
 
 std::vector<int> createNonCrossingPrefixSum(int n) {
     std::vector<int> array = fillWithOnesAndNegOnes(n);
-    std::random_device rd;
-    std::mt19937 g(rd());
-    std::shuffle(array.begin(), array.end(), g);
+
+    fisherYatesShuffle(array);
 
     std::vector<int> prefixSum = calculatePrefixSum(array);
     int minDepthIndex = findLowestPrefixSumIndex(prefixSum);
