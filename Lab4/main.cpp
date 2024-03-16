@@ -1,5 +1,5 @@
 #include <iostream>
-#include "prefixsumoperations.h" // Assuming this header contains the function declarations
+#include "prefixsumoperations.h"
 #include <cstdlib>
 #include <ctime>
 
