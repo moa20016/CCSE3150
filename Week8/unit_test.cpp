@@ -8,6 +8,9 @@ TEST_CASE("square") {
     CHECK(square(-1.0) == 1.0);
     CHECK(square(2.5) == 6.25);
     CHECK(square(-2.5) == 6.25);
+    CHECK(square(0.0) == 0.0); 
+    CHECK(square(1000000000.0) == 1.0e18); 
+    CHECK(square(-1000000000.0) == 1.0e18);
 }
 
 TEST_CASE("dot_product") {
