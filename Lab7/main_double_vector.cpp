@@ -7,7 +7,7 @@
 #include "distance.h"
 
 int main() {
-    std::ifstream infile("vectors_kD.txt");
+    std::ifstream infile("vectors_kD.txt"); //modify this text file for different k
     if (!infile.is_open()) {
         std::cout << "Error opening file." << std::endl;
         return 1;
