@@ -7,7 +7,7 @@
 #include "distance.h"
 
 int main() {
-    std::ifstream infile("vectors_kD.txt"); //modify this text file for different k
+    std::ifstream infile("vectors_kD.txt");
     if (!infile.is_open()) {
         std::cout << "Error opening file." << std::endl;
         return 1;
@@ -34,10 +34,6 @@ int main() {
             double distance = cosine_distance(vectors[i], vectors[j]);
             distances.push_back(my_distance(i, j, distance));
         }
-    }
-
-    for (const auto &dist : distances) {
-        std::cout << "Vectors " << dist.id_1 << " " << dist.id_2 << " dist = " << dist.cos_distance << std::endl;
     }
 
     std::sort(distances.begin(), distances.end(), [](const my_distance &a, const my_distance &b) {
