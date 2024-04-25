@@ -1,4 +1,4 @@
-# CSE 3150 - Week 8: Triangle3d
+# CSE 3150 - Week 9: Triangle3d
 This repository contains the code for Week 9 of the CSE 3150 course. Follow the steps below to download, compile, and test the code.
 
 **Clone the Repository**
